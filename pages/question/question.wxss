@@ -1,0 +1,96 @@
+.container {
+  padding: 30rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.question-content {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.question-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.math-content {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 1.8;
+}
+
+.options {
+  margin-bottom: 30rpx;
+}
+
+.option {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  border: 2rpx solid #e0e0e0;
+}
+
+.option.selected {
+  border-color: #1890ff;
+  background: #e6f7ff;
+}
+
+.btn-submit {
+  background: #1890ff;
+  color: #fff;
+  padding: 28rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.result {
+  margin-top: 30rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.result-header {
+  padding: 30rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.result-header.correct {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.result-header.wrong {
+  background: #fff2f0;
+  color: #ff4d4f;
+}
+
+.explanation {
+  padding: 30rpx;
+}
+
+.exp-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.exp-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.8;
+  display: block;
+}

@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="form">
+    <view class="form-section">
+      <view class="section-header">
+        <text class="section-title">题目</text>
+        <view class="type-switch">
+          <text class="{{qType === 'camera' ? 'active' : ''}}" bindtap="setQType" data-type="camera">拍照</text>
+          <text class="{{qType === 'text' ? 'active' : ''}}" bindtap="setQType" data-type="text">输入</text>
+        </view>
+      </view>
+      <view wx:if="{{qType === 'camera'}}" class="upload-box" bindtap="uploadQuestionImage">
+        <image wx:if="{{questionImage}}" src="{{questionImage}}" mode="aspectFit" class="preview-img"/>
+        <text wx:else class="upload-icon">+</text>
+      </view>
+      <textarea wx:if="{{qType === 'text'}}" class="input" placeholder="请输入题目内容" bindinput="inputTitle" value="{{title}}"/>
+    </view>
+
+    <view class="form-section">
+      <view class="section-header">
+        <text class="section-title">解析</text>
+        <view class="type-switch">
+          <text class="{{eType === 'camera' ? 'active' : ''}}" bindtap="setEType" data-type="camera">拍照</text>
+          <text class="{{eType === 'text' ? 'active' : ''}}" bindtap="setEType" data-type="text">输入</text>
+        </view>
+      </view>
+      <view wx:if="{{eType === 'camera'}}" class="upload-box" bindtap="uploadExplainImage">
+        <image wx:if="{{explainImage}}" src="{{explainImage}}" mode="aspectFit" class="preview-img"/>
+        <text wx:else class="upload-icon">+</text>
+      </view>
+      <textarea wx:if="{{eType === 'text'}}" class="input" placeholder="请输入解析内容" bindinput="inputExplanation" value="{{explanation}}"/>
+    </view>
+
+    <view class="btn-submit" bindtap="submitWrong">
+      <text>保存到错题本</text>
+    </view>
+  </view>
+</view>
