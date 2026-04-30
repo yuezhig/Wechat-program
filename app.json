@@ -1,16 +1,29 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/wrongbook/wrongbook",
-    "pages/addwrong/addwrong",
-    "pages/question/question"
+    "pages/apply/apply",
+    "pages/list/list",
+    "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "酷我帅帅哥的错题本",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#06ced3",
+    "navigationBarTitleText": "河南大学请假",
+    "navigationBarTitleText": "河大请假",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f1f4f5"
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#06ced3",
+    "list": [
+      {
+        "pagePath": "pages/apply/apply",
+        "text": "请假申请"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "我的请假"
+      }
+    ]
+  }
 }

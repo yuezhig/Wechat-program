@@ -1,0 +1,69 @@
+<view class="page-header">
+  <view class="page-title">我要请假</view>
+  <view class="page-subtitle">yzsfz.henu.edu.cn</view>
+</view>
+
+<view class="container">
+  <view class="card form-card">
+    <view class="form-item">
+      <view class="label"><text class="required">*</text>请假类型</view>
+      <picker mode="selector" range="{{leaveTypes}}" value="{{leaveTypeIndex}}" bindchange="onTypeChange">
+        <view class="picker-value">{{leaveTypes[leaveTypeIndex] || '请选择 >'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="label"><text class="required">*</text>开始时间</view>
+      <picker mode="multiSelector" range="{{dateTimeRange}}" bindchange="onStartTimeChange" bindcolumnchange="onStartColumnChange">
+        <view class="picker-value">{{startTimeStr || '选择日期 >'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="label"><text class="required">*</text>结束时间</view>
+      <picker mode="multiSelector" range="{{dateTimeRange}}" bindchange="onEndTimeChange" bindcolumnchange="onEndColumnChange">
+        <view class="picker-value">{{endTimeStr || '选择日期 >'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item switch-row">
+      <view class="label">是否离开学校</view>
+      <switch checked="{{leaveCampus}}" bindchange="onLeaveCampusChange" color="#06ced3"/>
+    </view>
+
+    <view class="form-item">
+      <view class="label"><text class="required">*</text>本人电话</view>
+      <input type="number" placeholder="请输入手机号" value="{{phone}}" bindinput="onPhoneInput" maxlength="11"/>
+    </view>
+
+    <view class="form-item textarea-item" style="flex-direction:column;align-items:flex-start;">
+      <text class="label" style="width:100%;margin-bottom:10rpx;"><text class="required">*</text>请假原因</text>
+      <textarea placeholder="请输入请假原因" value="{{reason}}" bindinput="onReasonInput" maxlength="200" style="width:100%;min-height:120rpx;"></textarea>
+    </view>
+
+    <view class="form-item attachment" style="flex-direction:column;align-items:flex-start;">
+      <text class="label" style="width:100%;margin-bottom:10rpx;">添加附件</text>
+      <view class="attachment-list" style="display:flex;flex-wrap:wrap;gap:16rpx;">
+        <block wx:for="{{attachments}}" wx:key="index">
+          <view style="position:relative;">
+            <image src="{{item}}" mode="aspectFill" style="width:120rpx;height:120rpx;border-radius:8rpx;" bindtap="previewImage" data-url="{{item}}"></image>
+            <view style="position:absolute;top:-10rpx;right:-10rpx;width:32rpx;height:32rpx;background:#ff4d4f;border-radius:50%;color:#fff;font-size:20rpx;line-height:32rpx;text-align:center;" bindtap="removeAttachment" data-index="{{index}}">×</view>
+          </view>
+        </block>
+        <view wx:if="{{attachments.length < 4}}" class="attachment-placeholder" bindtap="chooseImage">+</view>
+      </view>
+      <text class="attachment-count">{{attachments.length}}/4</text>
+    </view>
+
+    <view class="form-item checkbox-item" style="border:none;">
+      <checkbox-group bindchange="onAgreeChange">
+        <label style="display:flex;align-items:center;">
+          <checkbox value="agree" color="#06ced3"/>
+          <text style="margin-left:10rpx;font-size:24rpx;">本人承诺填写信息真实有效，并对本次提交请假申请的信息真实性负责。</text>
+        </label>
+      </checkbox-group>
+    </view>
+  </view>
+
+  <button class="submit-btn" bindtap="submitLeave" disabled="{{!agreed}}">提交请假</button>
+</view>

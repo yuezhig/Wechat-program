@@ -1,0 +1,18 @@
+<view class="container">
+  <view wx:if="{{list.length === 0}}" class="empty">暂无请假记录</view>
+  <block wx:else>
+    <view class="list-item" wx:for="{{list}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="list-item-header">
+        <text class="list-item-type">{{item.type}}</text>
+        <text class="{{item.status === '已通过' ? 'status-pass' : 'status-pending'}}">{{item.status}}</text>
+      </view>
+      <view class="list-item-time">
+        <text>时间：{{item.startTime}} - {{item.endTime}}</text>
+      </view>
+      <view class="list-item-duration">
+        <text>时长：{{item.duration}}</text>
+      </view>
+      <view class="list-item-apply-time">申请时间：{{item.applyTime}}</view>
+    </view>
+  </block>
+</view>
