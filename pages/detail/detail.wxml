@@ -14,20 +14,20 @@
         <text class="summary-label" style="color:#B7B8BA">请假类型：</text>
         <text>{{leave.type}}</text>
       </view>
-      <view class="summary-field">
-        <text class="summary-label" style="color:#B7B8BA">需要离校：</text>
+      <view class="summary-field" style="margin-left:60rpx;">
+        <text class="summary-label" space="nbsp" style="color:#B7B8BA">          需要离校：</text>
         <text>{{leave.leaveCampus ? '是' : '否'}}</text>
       </view>
     </view>
 
     <view class="summary-row detail-rule">
       <text class="summary-label" style="color:#B7B8BA">销假规则：</text>
-      <text>{{leave.leaveCampus ? '离校请假需要销假，非离校无需销假' : '非离校无需销假'}}</text>
+      <text>离校请假需要销假，非离校无需销假</text>
     </view>
 
     <view class="summary-row detail-time">
       <text class="summary-label" style="color:#B7B8BA">实际休假时间：</text>
-      <text>{{leave.startTime}}至{{leave.endTime}}（共{{leave.duration}}）</text>
+      <text>-</text>
     </view>
     </view>
 
@@ -46,7 +46,7 @@
     </view>
 
     <view class="reason-block">
-      <text class="reason-label">请假原因：</text>
+      <text class="reason-label" style="color:#B7B8BA">请假原因：</text>
       <view class="details-content">{{leave.reason}}</view>
     </view>
 

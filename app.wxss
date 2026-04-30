@@ -741,9 +741,12 @@ textarea {
   margin-bottom: -6rpx;
 }
 
-.info-container .detail-rule,
+.info-container .double-row {
+  margin-bottom: 20rpx;
+}
+
 .info-container .detail-time {
-  padding: 6rpx 0;
+  margin-bottom: 10rpx;
 }
 
 .current-approver {
@@ -756,12 +759,8 @@ textarea {
   border: 1rpx solid #c0f1df;
 }
 
-.summary-row.double-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20rpx;
+.info-container .double-row .summary-field:last-child {
+  margin-left: -60rpx;
 }
 
 .summary-field {
