@@ -3,7 +3,7 @@ Page({
     leaveTypes: ['病假', '事假', '公假', '其他'],
     leaveTypeIndex: 0,
     teachers: [
-      { id: 1, name: '李浩然' },
+      { id: 1, name: '酷我帅帅哥' },
       { id: 2, name: '岳智广' },
       { id: 3, name: '王建国' },
       { id: 4, name: '张伟' },
