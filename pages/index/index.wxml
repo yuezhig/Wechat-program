@@ -1,6 +1,6 @@
 <navigator url="/pages/apply/apply" open-type="switchTab">
   <view class="loading-container" style="background:#06ced3;">
-    <view class="title">河大请假</view>
+    <view class="title">山河请假</view>
     <view class="subtitle">点击进入</view>
   </view>
 </navigator>
